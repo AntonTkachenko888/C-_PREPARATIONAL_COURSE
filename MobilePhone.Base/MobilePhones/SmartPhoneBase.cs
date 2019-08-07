@@ -11,11 +11,11 @@ namespace MobilePhone.Base.MobilePhones
     {
         public abstract MemoryCardBase MemoryCard { get; }
 
-        public new string GetDescription()
+        public override string ToString()
         {
             var descriptionBuilder = new StringBuilder();
             descriptionBuilder.AppendLine($"MemoryCard Type: {MemoryCard.ToString()}");
-            return base.GetDescription() + descriptionBuilder.ToString();
+            return base.ToString() + descriptionBuilder.ToString();
         }
     }
 }

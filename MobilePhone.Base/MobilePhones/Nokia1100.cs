@@ -1,5 +1,5 @@
-﻿using MobilePhone.Base.Components.Batterys;
-using MobilePhone.Base.Components.Dynamics;
+﻿using MobilePhone.Base.Components.Batteries;
+using MobilePhone.Base.Components.Speakers;
 using MobilePhone.Base.Components.Keyboards;
 using MobilePhone.Base.Components.Microphones;
 using MobilePhone.Base.Components.Screens;
@@ -14,13 +14,15 @@ namespace MobilePhone.Base.MobilePhones
 {
     public class Nokia1100:UsualMobilePhoneBase
     {
+        private readonly string vModel = "Nokia1100";
+        public override string Model { get { return vModel; } }
         private readonly int vSerialNamber;
-        public override int SerialNamber {get { return vSerialNamber; }}
+        public override int SerialNumber {get { return vSerialNamber; }}
 
         private readonly SimCardMicro vSimCard = new SimCardMicro();
         public override SimCardBase SimCard { get { return vSimCard; } }
 
-        private readonly MonochromeScreen vScreen = new MonochromeScreen(100,100,100,100);
+        private readonly MonochromeScreen vScreen = new MonochromeScreen(100,100,100);
         public override ScreenBase Screen { get { return vScreen; } }
 
         private readonly BatteryLiPoly vBattery = new BatteryLiPoly(3000,5);
@@ -40,19 +42,19 @@ namespace MobilePhone.Base.MobilePhones
             vSerialNamber = serialNamber;
         }
 
-        public override void SimCardAdd(int namber)
+        public override void SimCardAdd(int number)
         {
-            SimCard.Namber = namber;
+            SimCard.Number = number;
         }
 
         public override string ToString()
         {
-            return "Nokia1100";
+            return base.ToString();
         }
 
-        public new string GetDescription()
+        public string GetDescription()
         {
-            return base.GetDescription();
+            return base.ToString();
         }
 
     }

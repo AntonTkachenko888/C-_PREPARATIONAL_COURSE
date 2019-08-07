@@ -11,28 +11,28 @@ namespace MobilePhone.Base.Components.Sim_cards
         private readonly string vType = "Micro";
         public override string Type { get { return vType; } }
 
-        private int? vNamber;
-        public override int? Namber
+        private int? vNumber;
+        public override int? Number
         {
-            get { return vNamber; }
-            set { vNamber = value; }
+            get { return vNumber; }
+            set { vNumber = value; }
         }
         public SimCardMicro()
         {
         }
-        public SimCardMicro(int namber)
+        public SimCardMicro(int number)
         {
-            vNamber = namber;
+            vNumber = number;
         }
         public override string ToString()
         {
-            if (Namber == null)
+            if (Number == null)
             {
                 return "Slot = SimCardMicro, simcard not instaled";
             }
             else
             {
-                return "SimCardNano, namber = " + vNamber;
+                return "SimCardNano, Number = " + vNumber;
             }
         }
     }

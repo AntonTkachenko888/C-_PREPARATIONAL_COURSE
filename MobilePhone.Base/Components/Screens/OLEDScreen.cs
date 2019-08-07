@@ -8,10 +8,10 @@ namespace MobilePhone.Base.Components.Screens
 {
     public class OLEDScreen: ColorfulTouchScreen
     {
-        public OLEDScreen(int highth, int width, int hightPX, int widthPX):base(highth, width, hightPX, widthPX){ }
+        public OLEDScreen(int highth, int width, int dpi):base(highth, width, dpi){ }
         public override string ToString()
         {
-            return $"OLEDScreen, highth = {Hight}, width = {Width}, hightPX = {HightPX}, widthPX = {WidthPX}";
+            return $"OLEDScreen, highth = {Hight}, width = {Width}, DPI = {DPI}";
         }
         public override string Show(IScreenImage screenImage)
         {

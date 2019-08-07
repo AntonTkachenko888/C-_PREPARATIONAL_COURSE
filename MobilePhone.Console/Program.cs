@@ -1,7 +1,7 @@
 ﻿using System;
 using MobilePhone.Base.MobilePhones;
 using MobilePhone.Base.Components.Screens;
-using MobilePhone.Base.Components.Dynamics;
+using MobilePhone.Base.Components.Speakers;
 
 namespace MobilePhone.ConsoleApp
 {
@@ -13,7 +13,7 @@ namespace MobilePhone.ConsoleApp
             {
                 MobilePhoneBase myNokia1100 = new Nokia1100(777);
                 myNokia1100.SimCardAdd(888);
-                Console.WriteLine(myNokia1100.GetDescription());
+                Console.WriteLine(myNokia1100);
                 Console.WriteLine();
                 Console.WriteLine(myNokia1100.Screen.Show(new SmileImage()));
                 Console.WriteLine();

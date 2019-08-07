@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobilePhone.Base.Components.Batterys
+namespace MobilePhone.Base.Components.Batteries
 {
     public abstract class BatteryBase
     {
         public abstract string BatteryType { get; }
 
-        protected int vBatteryEnergy;
-        public virtual int BatteryEnergy
+        protected int vBatteryCapacity;
+        public virtual int BatteryCapacity
         {
-            get { return vBatteryEnergy; }
+            get { return vBatteryCapacity; }
             private set
             {
                 if (value >= 1)
                 {
-                    vBatteryEnergy = value;
+                    vBatteryCapacity = value;
                 }
                 else
                 {
@@ -44,9 +44,9 @@ namespace MobilePhone.Base.Components.Batterys
             }
         }
 
-        protected BatteryBase(int batteryEnergy, int batteryVoltage)
+        protected BatteryBase(int batteryCapacity, int batteryVoltage)
         {
-            vBatteryEnergy = batteryEnergy;
+            vBatteryCapacity = batteryCapacity;
             vBatteryVoltage = batteryVoltage;
         }
     }

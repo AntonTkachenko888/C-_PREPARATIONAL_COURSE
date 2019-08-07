@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobilePhone.Base.Components.Dynamics
+namespace MobilePhone.Base.Components.Speakers
 {
-    public class DynamicMusic:DynamicBase
+    public class DynamicUsual:DynamicBase
     {
-        private readonly int vLoudness = 10;
+        private readonly int vLoudness = 5;
         public override int Loudness { get { return vLoudness; } }
 
         public override string MakeSound(ISound sound)
         {
-            return "DynamicMusic sound -> " + sound.Sound;
+            return "DynamicUsual sound -> " + sound.Sound;
         }
         public override string ToString()
         {
-            return "DynamicMusic, loudness = "+ vLoudness;
+            return "DynamicUsual, loudness = " + vLoudness;
         }
     }
 }

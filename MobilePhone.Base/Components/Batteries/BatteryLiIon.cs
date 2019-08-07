@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobilePhone.Base.Components.Batterys
+namespace MobilePhone.Base.Components.Batteries
 {
     public class BatteryLiIon: BatteryBase
     {
@@ -12,13 +12,13 @@ namespace MobilePhone.Base.Components.Batterys
         public override string BatteryType { get { return vBatteryType; } }
 
 
-        public BatteryLiIon(int batteryEnergy, int batteryVoltage): base(batteryEnergy, batteryVoltage)
+        public BatteryLiIon(int batteryCapacity, int batteryVoltage): base(batteryCapacity, batteryVoltage)
         {
         }
 
         public override string ToString()
         {
-            return $"BatteryLiIon, type {vBatteryType}, battery energy = {BatteryEnergy}, battery voltage = {BatteryVoltage}";
+            return $"BatteryLiIon, type {vBatteryType}, battery energy = {BatteryCapacity}, battery voltage = {BatteryVoltage}";
         }
     }
 }

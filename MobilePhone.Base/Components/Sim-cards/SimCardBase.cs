@@ -9,7 +9,7 @@ namespace MobilePhone.Base.Components.Sim_cards
     public abstract class SimCardBase
     {
         public abstract string Type { get; }
-        public abstract int? Namber { get; set; }
+        public abstract int? Number { get; set; }
         
     }
 }

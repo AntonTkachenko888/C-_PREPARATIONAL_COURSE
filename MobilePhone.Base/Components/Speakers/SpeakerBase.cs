@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobilePhone.Base.Components.Dynamics
+namespace MobilePhone.Base.Components.Speakers
 {
     public abstract class DynamicBase
     {

@@ -9,7 +9,6 @@ namespace MobilePhone.Base.Components.Screens
     public class ColorfulTouchScreen : ColorfulScreen
     {
         private int vTouches=1;
-        private int highth;
         
         public int Touches
         {
@@ -27,12 +26,11 @@ namespace MobilePhone.Base.Components.Screens
             }
         }
 
-        public ColorfulTouchScreen(int highth, int width, int hightPX, int widthPX) : base(highth, width, hightPX, widthPX) { }
-
-
+        public ColorfulTouchScreen(int highth, int width, int dpi) : base(highth, width, dpi) { }
+        
         public override string ToString()
         {
-            return $"ColorfulTouchScreen, highth = {Hight}, width = {Width},hightPX = {HightPX},widthPX = {WidthPX}";
+            return $"ColorfulTouchScreen, highth = {Hight}, width = {Width}, DPI = {DPI}";
         }
         public override string Show(IScreenImage screenImage)
         {

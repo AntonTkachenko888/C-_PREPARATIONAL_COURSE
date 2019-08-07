@@ -8,11 +8,11 @@ namespace MobilePhone.Base.Components.Screens
 {
     public class MonochromeScreen : ScreenBase
     {
-        public MonochromeScreen(int highth, int width, int hightPX, int widthPX) : base(highth, width, hightPX, widthPX) { }
+        public MonochromeScreen(int highth, int width, int dpi) : base(highth, width, dpi) { }
 
         public override string ToString()
         {
-            return $"MonochromeScreen, highth = {Hight}, width = {Width}, hightPX = {HightPX}, widthPX = {WidthPX}";
+            return $"MonochromeScreen, highth = {Hight}, width = {Width}, DPI = {DPI}";
         }
 
 

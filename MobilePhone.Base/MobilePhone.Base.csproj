@@ -40,14 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Batterys\BatteryLiIon.cs" />
-    <Compile Include="Components\Batterys\BatteryLiPoly.cs" />
-    <Compile Include="Components\Batterys\BatteryBase.cs" />
-    <Compile Include="Components\Dynamics\DynamicMusic.cs" />
-    <Compile Include="Components\Dynamics\DynamicBase.cs" />
-    <Compile Include="Components\Dynamics\DynamicUsual.cs" />
-    <Compile Include="Components\Dynamics\HiSound.cs" />
-    <Compile Include="Components\Dynamics\ISound.cs" />
+    <Compile Include="Components\Batteries\BatteryLiIon.cs" />
+    <Compile Include="Components\Batteries\BatteryLiPoly.cs" />
+    <Compile Include="Components\Batteries\BatteryBase.cs" />
+    <Compile Include="Components\Speakers\SpeakerMusic.cs" />
+    <Compile Include="Components\Speakers\SpeakerBase.cs" />
+    <Compile Include="Components\Speakers\SpeakerUsual.cs" />
+    <Compile Include="Components\Speakers\HiSound.cs" />
+    <Compile Include="Components\Speakers\ISound.cs" />
     <Compile Include="Components\Keyboards\KeyboardBase.cs" />
     <Compile Include="Components\Keyboards\UAKeyboard.cs" />
     <Compile Include="Components\Keyboards\USKeyboard.cs" />
@@ -64,7 +64,7 @@
     <Compile Include="Components\Screens\RetinaScreen.cs" />
     <Compile Include="Components\Screens\ScreenBase .cs" />
     <Compile Include="Components\Screens\SmileImage.cs" />
-    <Compile Include="Components\Screens\TouchScreen.cs" />
+    <Compile Include="Components\Screens\ColorfulTouchScreen.cs" />
     <Compile Include="Components\Sim-cards\SimCardBase.cs" />
     <Compile Include="Components\Sim-cards\SimCardMicro.cs" />
     <Compile Include="Components\Sim-cards\SimCardNano.cs" />

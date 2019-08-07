@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobilePhone.Base.Components.Batterys
+namespace MobilePhone.Base.Components.Batteries
 {
     public class BatteryLiPoly: BatteryBase
     {
         private readonly string vBatteryType = "LiPoly";
         public override string BatteryType{get { return vBatteryType; }}
         
-        public BatteryLiPoly(int batteryEnergy,int batteryVoltage): base(batteryEnergy, batteryVoltage)
+        public BatteryLiPoly(int batteryCapacity,int batteryVoltage): base(batteryCapacity, batteryVoltage)
         {
         }
         public override int BatteryVoltage
@@ -31,7 +31,7 @@ namespace MobilePhone.Base.Components.Batterys
         }
         public override string ToString()
         {
-            return $"BatteryLiPoly, type {vBatteryType}, battery energy = {BatteryEnergy}, battery voltage = {BatteryVoltage}";
+            return $"BatteryLiPoly, type {vBatteryType}, battery energy = {BatteryCapacity}, battery voltage = {BatteryVoltage}";
         }
 
     }

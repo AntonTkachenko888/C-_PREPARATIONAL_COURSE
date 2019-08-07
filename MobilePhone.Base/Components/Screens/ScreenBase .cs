@@ -42,46 +42,28 @@ namespace MobilePhone.Base.Components.Screens
             }
         }
 
-        private int vHightPX;
-        public int HightPX
+        protected int vDPI;
+        public virtual int DPI
         {
-            get { return vHightPX; }
+            get { return vDPI; }
             set
             {
-                if (value >= 1)
+                if (value >= 100)
                 {
-                    vHightPX = value;
+                    vDPI = value;
                 }
                 else
                 {
-                    throw new Exception("Value can't be less than 1");
+                    throw new Exception("Value can't be less than 100");
                 }
             }
         }
 
-        private int vWidthPX;
-        public int WidthPX
+        protected ScreenBase(int hiight, int width,int dpi)
         {
-            get { return vWidthPX; }
-            set
-            {
-                if (value >= 1)
-                {
-                    vWidthPX = value;
-                }
-                else
-                {
-                    throw new Exception("Value can't be less than 1");
-                }
-            }
-        }
-
-        protected ScreenBase(int highth, int width, int hightPX, int widthPX)
-        {
-            Hight = highth;
+            Hight = hiight;
             Width = width;
-            HightPX = hightPX;
-            WidthPX = widthPX;
+            DPI = dpi;
         }
         public abstract string Show(IScreenImage screenImage);
         public abstract string Show(IScreenImage screenImage, int brightness);
