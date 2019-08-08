@@ -9,6 +9,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MobilePhone.Base.Components.Chargers;
+using MobilePhone.Base.Components.HeadSets;
 
 namespace MobilePhone.Base.MobilePhones
 {
@@ -22,6 +24,17 @@ namespace MobilePhone.Base.MobilePhones
         public abstract DynamicBase Dynamic { get; }
         public abstract MicrophoneBase Microphone { get; }
 
+        public IPlayback PlaybackComponent { get; set; }
+        public ICharger ChargerComponent { get; set; }
+
+        public void Play(object data)
+        {
+            PlaybackComponent.Play(data);
+        }
+        public void Charge()
+        {
+            ChargerComponent.Charge();
+        }
         public abstract void SimCardAdd(int number);
         public override string ToString()
         {

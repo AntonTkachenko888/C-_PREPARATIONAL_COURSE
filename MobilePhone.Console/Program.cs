@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq.Expressions;
+using MobilePhone.Base.Components.HeadSets;
 using MobilePhone.Base.MobilePhones;
+using MobilePhone.Base.Components.Chargers;
 using MobilePhone.Base.Components.Screens;
 using MobilePhone.Base.Components.Speakers;
 
@@ -11,18 +14,28 @@ namespace MobilePhone.ConsoleApp
         {
             try
             {
+                var console = new ConsoleOutput();
+
                 MobilePhoneBase myNokia1100 = new Nokia1100(777);
-                myNokia1100.SimCardAdd(888);
-                Console.WriteLine(myNokia1100);
+
+                Console.WriteLine("Select playback component:");
+                Console.WriteLine("1 - iPhoneHeadset");
+                Console.WriteLine("2 - SamsungHeadset");
+                Console.WriteLine("3 - UnofficialiPhoneHeadset");
+                Console.WriteLine("4 - PhoneSpeaker");
+                int playbackNumber = readNumber();
+                myNokia1100.PlaybackComponent = HeadsetFactory.GetHeadset((Headsets)playbackNumber, console);
+                myNokia1100.PlaybackComponent.Play("Hi");
+
                 Console.WriteLine();
-                Console.WriteLine(myNokia1100.Screen.Show(new SmileImage()));
-                Console.WriteLine();
-                Console.WriteLine(myNokia1100.Dynamic.MakeSound(new HiSound()));
-                Console.WriteLine();
-                Console.WriteLine(myNokia1100.Microphone.GetSound());
-                Console.WriteLine();
-                Console.WriteLine(myNokia1100.Call(555));
-                Console.WriteLine();
+
+                Console.WriteLine("Select charger component:");
+                Console.WriteLine("1 - FastCharge");
+                Console.WriteLine("2 - UsualCharge");
+                int chargerNumber = readNumber();
+                myNokia1100.ChargerComponent = ChargeFactory.GetCharge((Charges)chargerNumber, console);
+                myNokia1100.Charge();
+
                 Console.ReadKey();
             }
             catch (Exception ex)
@@ -34,6 +47,18 @@ namespace MobilePhone.ConsoleApp
             {
                 Console.WriteLine("Goodbye");
             }
-        } 
+        }
+        public static int readNumber()
+        {
+            while (true)
+            {
+                string key = Console.ReadLine();
+                int result;
+                if (int.TryParse(key, out result))
+                {
+                    return result;
+                }
+            }
+        }
     }
 }
