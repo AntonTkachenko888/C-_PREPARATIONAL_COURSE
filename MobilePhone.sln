@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.ConsoleApp", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.Base", "MobilePhone.Base\MobilePhone.Base.csproj", "{4C7947A3-AD69-4A97-82BC-D1BB8DF8068D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.WindowsFormsApp", "MobilePhone.WindowsFormsApp\MobilePhone.WindowsFormsApp.csproj", "{46DB0C18-8572-490A-822A-11053DDBE0FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4C7947A3-AD69-4A97-82BC-D1BB8DF8068D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C7947A3-AD69-4A97-82BC-D1BB8DF8068D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C7947A3-AD69-4A97-82BC-D1BB8DF8068D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46DB0C18-8572-490A-822A-11053DDBE0FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46DB0C18-8572-490A-822A-11053DDBE0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46DB0C18-8572-490A-822A-11053DDBE0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46DB0C18-8572-490A-822A-11053DDBE0FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
