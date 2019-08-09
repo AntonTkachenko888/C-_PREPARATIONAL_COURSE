@@ -58,6 +58,10 @@ namespace MobilePhone.ConsoleApp
                 {
                     return result;
                 }
+                else
+                {
+                    Console.WriteLine("Value must be integer, from list above!");
+                }
             }
         }
     }
