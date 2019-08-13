@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.WindowsFormsApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.UnitTestProject", "MobilePhone.UnitTestProject\MobilePhone.UnitTestProject.csproj", "{5A46E18C-A42E-4C33-8651-188BA49B9BE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSSender", "SMSSender\SMSSender.csproj", "{D3D08ECF-1C24-4560-A69E-972899B95E5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C50730DC-B064-4B9D-9723-522D5FC78C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageFormatting.UnitTestProject", "MessageFormatting.UnitTestProject\MessageFormatting.UnitTestProject.csproj", "{80DBAFDD-7381-4EDC-BF13-715E5F332676}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +39,20 @@ Global
 		{5A46E18C-A42E-4C33-8651-188BA49B9BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A46E18C-A42E-4C33-8651-188BA49B9BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A46E18C-A42E-4C33-8651-188BA49B9BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3D08ECF-1C24-4560-A69E-972899B95E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3D08ECF-1C24-4560-A69E-972899B95E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3D08ECF-1C24-4560-A69E-972899B95E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3D08ECF-1C24-4560-A69E-972899B95E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DBAFDD-7381-4EDC-BF13-715E5F332676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DBAFDD-7381-4EDC-BF13-715E5F332676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DBAFDD-7381-4EDC-BF13-715E5F332676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DBAFDD-7381-4EDC-BF13-715E5F332676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A46E18C-A42E-4C33-8651-188BA49B9BE0} = {C50730DC-B064-4B9D-9723-522D5FC78C73}
+		{80DBAFDD-7381-4EDC-BF13-715E5F332676} = {C50730DC-B064-4B9D-9723-522D5FC78C73}
 	EndGlobalSection
 EndGlobal

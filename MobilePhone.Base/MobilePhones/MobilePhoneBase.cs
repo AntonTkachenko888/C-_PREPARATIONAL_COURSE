@@ -11,11 +11,13 @@ using System.Text;
 using System.Threading.Tasks;
 using MobilePhone.Base.Components.Chargers;
 using MobilePhone.Base.Components.HeadSets;
+using MobilePhone.Base.Components.SMS;
 
 namespace MobilePhone.Base.MobilePhones
 {
     public abstract class MobilePhoneBase
     {
+        public abstract SMSProvider SMSProvider { get; }
         public abstract string Model { get; }
         public abstract int SerialNumber { get; }
         public abstract SimCardBase SimCard { get; }

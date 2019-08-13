@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MobilePhone.Base.Components.SMS;
 
 namespace MobilePhone.Base.MobilePhones
 {
@@ -18,6 +19,9 @@ namespace MobilePhone.Base.MobilePhones
         public override string Model { get { return vModel; } }
         private readonly int vSerialNamber;
         public override int SerialNumber {get { return vSerialNamber; }}
+
+        private readonly SMSProvider vSMSProvider = new SMSProvider();
+        public override SMSProvider SMSProvider { get { return vSMSProvider; } }
 
         private readonly SimCardMicro vSimCard = new SimCardMicro();
         public override SimCardBase SimCard { get { return vSimCard; } }

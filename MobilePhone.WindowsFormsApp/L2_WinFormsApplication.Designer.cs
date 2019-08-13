@@ -1,6 +1,6 @@
 ﻿namespace MobilePhone.WindowsFormsApp
 {
-    partial class MobilePhone
+    partial class L2_WinFormsApplication
     {
         /// <summary>
         /// Required designer variable.
@@ -216,7 +216,7 @@
             this.labelCurentPhone.TabIndex = 4;
             this.labelCurentPhone.Text = "Curent phone:";
             // 
-            // MobilePhone
+            // L2_WinFormsApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,10 +227,11 @@
             this.Controls.Add(this.panelCharge);
             this.Controls.Add(this.panelPlayback);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
-            this.Name = "MobilePhone";
-            this.Text = "MobilePhone";
+            this.Name = "L2_WinFormsApplication";
+            this.Text = "L2_WinFormsApplication";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelPlayback.ResumeLayout(false);
             this.panelPlayback.PerformLayout();

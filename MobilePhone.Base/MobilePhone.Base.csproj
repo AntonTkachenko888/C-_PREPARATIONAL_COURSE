@@ -50,6 +50,8 @@
     <Compile Include="Components\Chargers\UsualCharge.cs" />
     <Compile Include="Components\HeadSets\HeadsetFactory.cs" />
     <Compile Include="Components\HeadSets\Headsets.cs" />
+    <Compile Include="Components\SMS\FormatMethods.cs" />
+    <Compile Include="Components\SMS\SMSProvider.cs" />
     <Compile Include="GeneralInterfaces\IOutput.cs" />
     <Compile Include="Components\HeadSets\iPhoneHeadset.cs" />
     <Compile Include="Components\HeadSets\IPlayback.cs" />

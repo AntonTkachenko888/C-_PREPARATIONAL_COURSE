@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MobilePhone.Base.MobilePhones;
 
 namespace MobilePhone.WindowsFormsApp
 {
@@ -16,7 +17,7 @@ namespace MobilePhone.WindowsFormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MobilePhone());
+            Application.Run(new L3_MessageFormatting());
         }
     }
 }

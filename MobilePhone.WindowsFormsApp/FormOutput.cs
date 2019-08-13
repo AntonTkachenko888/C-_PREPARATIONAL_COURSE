@@ -17,12 +17,12 @@ namespace MobilePhone.WindowsFormsApp
         }
         public void Write(string text)
         {
-            richTextBox.Text = richTextBox.Text + text;
+            richTextBox.AppendText(text);
         }
 
         public void WriteLine(string text)
         {
-            richTextBox.Text = richTextBox.Text +"\n"+ text;
+            richTextBox.AppendText(text + Environment.NewLine);
         }
     }
 }

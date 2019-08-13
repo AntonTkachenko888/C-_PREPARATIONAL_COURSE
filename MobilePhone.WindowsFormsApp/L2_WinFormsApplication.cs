@@ -13,13 +13,13 @@ using MobilePhone.Base.Components.HeadSets;
 
 namespace MobilePhone.WindowsFormsApp
 {
-    public partial class MobilePhone : Form
+    public partial class L2_WinFormsApplication : Form
     {
         private readonly MobilePhoneBase Nokia1100 = new Nokia1100(777);
         private Headsets currentHeadsets;
         private Charges currentCharges;
         private FormOutput formOutput;
-        public MobilePhone()
+        public L2_WinFormsApplication()
         {
             InitializeComponent();
         }
