@@ -31,17 +31,17 @@ namespace MobilePhone.WindowsFormsApp
             formOutput = new FormOutput(richTextBox_MessageOutBox);
         }
 
-        private void OnSMSReceived(string message)
+        private void OnSMSReceived(IMessage message)
         {
             if (InvokeRequired)
             {
                 Invoke(new SMSProvider.SMSReceivedDelegate(OnSMSReceived), message);
                 return;
             }
-            formOutput.WriteLine(FormatedMessage(message));
+            formOutput.WriteLine(FormatedMessage(message).Text);
         }
 
-        private string FormatedMessage(string message)
+        private IMessage FormatedMessage(IMessage message)
         {
             return FormatMethods.GetFormatMethod(comboBox_FormattingOptions.SelectedText).Invoke(message);
         }

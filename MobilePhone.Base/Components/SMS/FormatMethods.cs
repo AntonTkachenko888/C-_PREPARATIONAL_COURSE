@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MobilePhone.Base.Components.SMS
 {
-    public delegate string FormatDelegate(string message);
+    public delegate IMessage FormatDelegate(IMessage message);
 
     public enum StandartFormats
     {
@@ -20,29 +20,35 @@ namespace MobilePhone.Base.Components.SMS
 
     public static class FormatMethods
     {
-        private static string None(string message)
+        private static IMessage None(IMessage message)
         {
-            return $"{message}";
+            message.Text = $"{message.Text}";
+            return message;
         }
-        private static string StartWithDateTime(string message)
+        private static IMessage StartWithDateTime(IMessage message)
         {
-            return $"[{DateTime.Now}] {message}";
+            message.Text = $"[{message.ReceivingTime}] {message.Text}";
+            return message;
         }
-        private static string EndWithDateTime(string message)
+        private static IMessage EndWithDateTime(IMessage message)
         {
-            return $"{message} [{DateTime.Now}]";
+            message.Text = $"{message.Text} [{message.ReceivingTime}]";
+            return message;
         }
-        private static string Custom(string message)
+        private static IMessage Custom(IMessage message)
         {
-            return $"@@@{message} [{DateTime.Now}]@@@";
+            message.Text = $"@@@{message.Text} [{message.ReceivingTime}]@@@";
+            return message;
         }
-        private static string Lowercase(string message)
+        private static IMessage Lowercase(IMessage message)
         {
-            return $"{message.ToLower()}";
+            message.Text = $"{message.Text.ToLower()}";
+            return message;
         }
-        private static string Uppercase(string message)
+        private static IMessage Uppercase(IMessage message)
         {
-            return $"{message.ToUpper()}";
+            message.Text = $"{message.Text.ToUpper()}";
+            return message;
         }
 
         private static FormatDelegate GetFormatMethod(StandartFormats format)

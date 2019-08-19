@@ -8,11 +8,11 @@ namespace MobilePhone.Base.Components.SMS
 {
     public class SMSProvider
     {
-        public delegate void SMSReceivedDelegate(string message);
+        public delegate void SMSReceivedDelegate(IMessage message);
 
         public event SMSReceivedDelegate SMSRecieved;
 
-        public void RaiseSMSReceivedEvent(string message)
+        public void RaiseSMSReceivedEvent(IMessage message)
         {
             var handler = SMSRecieved;
             if (handler != null)
