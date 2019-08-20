@@ -53,7 +53,11 @@
     <Compile Include="Components\SMS\FormatMethods.cs" />
     <Compile Include="Components\SMS\IMessage.cs" />
     <Compile Include="Components\SMS\Message.cs" />
+    <Compile Include="Components\SMS\MessageComparer.cs" />
+    <Compile Include="Components\SMS\MessageFilteringParams.cs" />
+    <Compile Include="Components\SMS\SortOptions.cs" />
     <Compile Include="Components\SMS\SMSProvider.cs" />
+    <Compile Include="Components\SMS\Storage.cs" />
     <Compile Include="GeneralInterfaces\IOutput.cs" />
     <Compile Include="Components\HeadSets\iPhoneHeadset.cs" />
     <Compile Include="Components\HeadSets\IPlayback.cs" />

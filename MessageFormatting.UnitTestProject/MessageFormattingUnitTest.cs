@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MobilePhone.Base.Components.SMS;
 using MobilePhone.Base.MobilePhones;
@@ -94,6 +95,30 @@ namespace MessageFormatting.UnitTestProject
             var result = del(testMessage);
             //assert
             Assert.AreEqual(expectedValue, result.Text);
+        }
+
+        [TestMethod]
+        public void Format_WrongFormat_FormatinfList()
+        {
+            //arrange
+            var del = FormatMethods.GetFormatMethod("Lowercase");
+            var testMessage = new List<Message>();
+            testMessage.Add(new Message() {Text = "Hi1", User = "Barny", ReceivingTime = new DateTime(1993, 03, 14)});
+            testMessage.Add(new Message() { Text = "Hi2", User = "Barny", ReceivingTime = new DateTime(1993, 03, 14) });
+            testMessage.Add(new Message() { Text = "Hi3", User = "Barny", ReceivingTime = new DateTime(1993, 03, 14) });
+            var expectedValue = new List<Message>();
+            expectedValue.Add(new Message() { Text = "hi1", User = "Barny", ReceivingTime = new DateTime(1993, 03, 14) });
+            expectedValue.Add(new Message() { Text = "hi2", User = "Barny", ReceivingTime = new DateTime(1993, 03, 14) });
+            expectedValue.Add(new Message() { Text = "hi3", User = "Barny", ReceivingTime = new DateTime(1993, 03, 14) });
+            //act
+            foreach (var item in testMessage)
+            {
+                item.Text = del(item).Text;
+            }
+            //assert
+            Assert.AreEqual(testMessage[0].Text, expectedValue[0].Text);
+            Assert.AreEqual(testMessage[1].Text, expectedValue[1].Text);
+            Assert.AreEqual(testMessage[2].Text, expectedValue[2].Text);
         }
         #endregion
 

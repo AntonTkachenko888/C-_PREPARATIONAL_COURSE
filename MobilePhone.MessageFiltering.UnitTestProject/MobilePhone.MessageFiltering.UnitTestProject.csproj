@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{80DBAFDD-7381-4EDC-BF13-715E5F332676}</ProjectGuid>
+    <ProjectGuid>{6E49A997-702C-4873-9FD6-84D227D6B35C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MessageFormatting.UnitTestProject</RootNamespace>
-    <AssemblyName>MessageFormatting.UnitTestProject</AssemblyName>
+    <RootNamespace>MobilePhone.MessageFiltering.UnitTestProject</RootNamespace>
+    <AssemblyName>MobilePhone.MessageFiltering.UnitTestProject</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -45,31 +45,18 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
-          <Private>False</Private>
-        </Reference>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MessageFormattingUnitTest.cs" />
+    <Compile Include="MessageFiltering_UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MobilePhone.Base\MobilePhone.Base.csproj">
       <Project>{4c7947a3-ad69-4a97-82bc-d1bb8df8068d}</Project>
       <Name>MobilePhone.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MobilePhone.UnitTestProject\MobilePhone.UnitTestProject.csproj">
-      <Project>{5a46e18c-a42e-4c33-8651-188ba49b9be0}</Project>
-      <Name>MobilePhone.UnitTestProject</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SMSSender\SMSSender.csproj">
-      <Project>{d3d08ecf-1c24-4560-a69e-972899b95e5e}</Project>
-      <Name>SMSSender</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

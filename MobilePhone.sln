@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C50730DC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageFormatting.UnitTestProject", "MessageFormatting.UnitTestProject\MessageFormatting.UnitTestProject.csproj", "{80DBAFDD-7381-4EDC-BF13-715E5F332676}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.MessageFiltering.UnitTestProject", "MobilePhone.MessageFiltering.UnitTestProject\MobilePhone.MessageFiltering.UnitTestProject.csproj", "{6E49A997-702C-4873-9FD6-84D227D6B35C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{80DBAFDD-7381-4EDC-BF13-715E5F332676}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80DBAFDD-7381-4EDC-BF13-715E5F332676}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80DBAFDD-7381-4EDC-BF13-715E5F332676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E49A997-702C-4873-9FD6-84D227D6B35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E49A997-702C-4873-9FD6-84D227D6B35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E49A997-702C-4873-9FD6-84D227D6B35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E49A997-702C-4873-9FD6-84D227D6B35C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,5 +60,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5A46E18C-A42E-4C33-8651-188BA49B9BE0} = {C50730DC-B064-4B9D-9723-522D5FC78C73}
 		{80DBAFDD-7381-4EDC-BF13-715E5F332676} = {C50730DC-B064-4B9D-9723-522D5FC78C73}
+		{6E49A997-702C-4873-9FD6-84D227D6B35C} = {C50730DC-B064-4B9D-9723-522D5FC78C73}
 	EndGlobalSection
 EndGlobal

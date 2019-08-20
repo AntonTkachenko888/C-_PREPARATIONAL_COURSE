@@ -17,7 +17,7 @@ namespace MobilePhone.WindowsFormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new L3_MessageFormatting());
+            Application.Run(new L4_MessageFiltering());
         }
     }
 }

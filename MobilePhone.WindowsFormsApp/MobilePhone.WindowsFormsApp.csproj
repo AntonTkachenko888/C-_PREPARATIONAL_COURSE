@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="L4_MessageFiltering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L4_MessageFiltering.Designer.cs">
+      <DependentUpon>L4_MessageFiltering.cs</DependentUpon>
+    </Compile>
     <Compile Include="L2_WinFormsApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="L4_MessageFiltering.resx">
+      <DependentUpon>L4_MessageFiltering.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="L2_WinFormsApplication.resx">
       <DependentUpon>L2_WinFormsApplication.cs</DependentUpon>
     </EmbeddedResource>

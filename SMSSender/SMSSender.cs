@@ -18,14 +18,6 @@ namespace SMSSender
         private SmsSender()
         {
             Messages = new List<IMessage>();
-            Messages.Add(new Message() { User = "Bart", Text = "Loser",
-                ReceivingTime = new DateTime(1993, 3, 14, 10, 14, 23) });
-            Messages.Add(new Message() { User = "Homer", Text = "D’Oh!",
-                ReceivingTime = new DateTime(1994, 3, 14, 10, 14, 23) });
-            Messages.Add(new Message() { User = "Marge", Text = "You have no idea what it's like, being married to you.",
-                ReceivingTime = new DateTime(1995, 3, 14, 10, 14, 23) });
-            Messages.Add(new Message() { User = "Homer", Text = "Boring!",
-                ReceivingTime = new DateTime(1996, 3, 14, 10, 14, 23) });
             Messages.Add(new Message() { User = "Bart", Text = "Caramba",
                 ReceivingTime = new DateTime(1997, 3, 14, 10, 14, 23) });
             Messages.Add(new Message() { User = "Marge", Text = "You don’t win friends with salad",

@@ -19,9 +19,12 @@ namespace MobilePhone.Base.MobilePhones
         public override string Model { get { return vModel; } }
         private readonly int vSerialNamber;
         public override int SerialNumber {get { return vSerialNamber; }}
-
+        
         private readonly SMSProvider vSMSProvider = new SMSProvider();
         public override SMSProvider SMSProvider { get { return vSMSProvider; } }
+
+        private readonly Storage vStorage;
+        public override Storage Storage { get { return vStorage; } }
 
         private readonly SimCardMicro vSimCard = new SimCardMicro();
         public override SimCardBase SimCard { get { return vSimCard; } }
@@ -41,7 +44,11 @@ namespace MobilePhone.Base.MobilePhones
         private readonly UAKeyboard vKeyboard = new UAKeyboard();
         public override KeyboardBase Keyboard { get { return vKeyboard; } }
 
-        public Nokia1100(int serialNamber)
+        private Nokia1100()
+        {
+            vStorage = new Storage(SMSProvider);
+        }
+        public Nokia1100(int serialNamber):this()
         {
             vSerialNamber = serialNamber;
         }

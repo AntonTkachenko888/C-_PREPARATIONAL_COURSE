@@ -17,6 +17,7 @@ namespace MobilePhone.Base.MobilePhones
 {
     public abstract class MobilePhoneBase
     {
+        public abstract Storage Storage { get; }
         public abstract SMSProvider SMSProvider { get; }
         public abstract string Model { get; }
         public abstract int SerialNumber { get; }
