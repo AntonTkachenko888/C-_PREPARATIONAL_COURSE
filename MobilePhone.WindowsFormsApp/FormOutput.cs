@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MobilePhone.Base.GeneralInterfaces;
 using System.Windows.Forms;
+
 namespace MobilePhone.WindowsFormsApp
 {
     public class  FormOutput: IOutput

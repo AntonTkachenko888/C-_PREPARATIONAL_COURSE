@@ -7,29 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MobilePhone.Base.Components.Chargers;
 using MobilePhone.Base.Components.SMS;
 using MobilePhone.Base.MobilePhones;
 using SMSSender;
 
 namespace MobilePhone.WindowsFormsApp
 {
-    public partial class L4_MessageFiltering : Form
+    public partial class L5_MessageFiltering : Form
     {
         private readonly MobilePhoneBase Nokia1100 = new Nokia1100(777);
-        private SmsSender SmsSender;
+        private SmsSenderBase SmsSender;
         private MessageFilteringParams vMessageFilteringParams =new MessageFilteringParams();
-        public L4_MessageFiltering()
+        private FormOutputTextBox formOutput;
+        public L5_MessageFiltering()
         {
             InitializeComponent();
         }
         private void L4_MessageFiltering_Load(object sender, EventArgs e)
         {
-            SmsSender = new SmsSender(Nokia1100);
+            formOutput = new FormOutputTextBox(textBox_ChargeMethod);
+            SmsSender = SMSSenderFactory.GetSMSSender(SmsSenders.SMSSenderTask,Nokia1100);
+            Nokia1100.Battery.PhoneRun();
             Nokia1100.Storage.MessageAdded += OnMessageAdded;
             Nokia1100.Storage.MessageRemoved += OnMessageRemoved;
 
+            Nokia1100.Battery.BatteryChargeChanged += OnBatteryChargeChanged;
+
             dateTimePicker_FromDate.Value = dateTimePicker_FromDate.MinDate;
             dateTimePicker_BeforeDate.Value = dateTimePicker_BeforeDate.MaxDate;
+
+            progressBar_BatteryCapacity.Minimum = 0;
+            progressBar_BatteryCapacity.Maximum = 100;
 
             listView_Messages.View = View.Details;
             listView_Messages.GridLines = true;
@@ -39,6 +48,41 @@ namespace MobilePhone.WindowsFormsApp
             listView_Messages.Columns.Add("Message", 450);
             listView_Messages.Columns.Add("ReceivingTime", 200);
         }
+        #region Charging
+        private void button_PutOnCharge_Click(object sender, EventArgs e)
+        {
+            Charges currentCharge;
+            if (Charges.TryParse(comboBox_ChargeType.Text.Replace(" ", "").Trim(), true, out currentCharge))
+            {
+                Nokia1100.ChargerComponent = ChargeFactory.GetCharge(currentCharge, Nokia1100.Battery, formOutput);
+                Nokia1100.ChargerComponent.PutOnCharge();
+                Nokia1100.ChargerComponent.GetChargeMethod();
+            }
+            else
+            {
+                MessageBox.Show("Not valid charger");
+            }
+        }
+
+        private void button_RemoveCharge_Click(object sender, EventArgs e)
+        {
+            if (Nokia1100.ChargerComponent != null)
+            {
+                Nokia1100.ChargerComponent.RemoveFromCharge();
+                Nokia1100.ChargerComponent = null;
+                textBox_ChargeMethod.Text = "";
+            }
+        }
+
+        private void OnBatteryChargeChanged()
+        {
+            Invoke(new Action(() =>
+            {
+                progressBar_BatteryCapacity.Value = Nokia1100.Battery.BatteryCapacity;
+            }));
+        }
+        #endregion
+        #region Messaging
         private void OnMessageAdded()
         {
             if (InvokeRequired)
@@ -123,8 +167,13 @@ namespace MobilePhone.WindowsFormsApp
 
         private void button_StartReceivingMessages_Click(object sender, EventArgs e)
         {
-            SmsSender.TimerTick(1);
+            SmsSender.StartMessaging(1);
         }
+        private void button_StopMessaging_Click(object sender, EventArgs e)
+        {
+            SmsSender.StopMessaging();
+        }
+        #endregion
         #region StateChanged
         private void comboBox_Users_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -172,6 +221,9 @@ namespace MobilePhone.WindowsFormsApp
         }
 
 
+
         #endregion
+
+        
     }
 }

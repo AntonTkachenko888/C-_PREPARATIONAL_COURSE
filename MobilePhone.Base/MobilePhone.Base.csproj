@@ -45,9 +45,11 @@
     <Compile Include="Components\Batteries\BatteryBase.cs" />
     <Compile Include="Components\Chargers\ChargeFactory.cs" />
     <Compile Include="Components\Chargers\Charges.cs" />
-    <Compile Include="Components\Chargers\FastCharge.cs" />
-    <Compile Include="Components\Chargers\ICharger.cs" />
-    <Compile Include="Components\Chargers\UsualCharge.cs" />
+    <Compile Include="Components\Chargers\FastChargeTask.cs" />
+    <Compile Include="Components\Chargers\FastChargeThread.cs" />
+    <Compile Include="Components\Chargers\ChargeBase.cs" />
+    <Compile Include="Components\Chargers\UsualChargeTask.cs" />
+    <Compile Include="Components\Chargers\UsualChargeThread.cs" />
     <Compile Include="Components\HeadSets\HeadsetFactory.cs" />
     <Compile Include="Components\HeadSets\Headsets.cs" />
     <Compile Include="Components\SMS\FormatMethods.cs" />

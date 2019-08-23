@@ -43,7 +43,7 @@ namespace MobilePhone.WindowsFormsApp
         
         private void button_ApplyCharger_Click(object sender, EventArgs e)
         {
-            Nokia1100.ChargerComponent = ChargeFactory.GetCharge(currentCharges, formOutput);
+            Nokia1100.ChargerComponent = ChargeFactory.GetCharge(currentCharges, Nokia1100.Battery, formOutput);
             Nokia1100.Charge();
         }
         
@@ -111,11 +111,11 @@ namespace MobilePhone.WindowsFormsApp
         {
             if (radioButton_FastCharge.Checked)
             {
-                return Charges.FastCharge;
+                return Charges.FastChargeThread;
             }
             else if (radioButton_UsualCharge.Checked)
             {
-                return Charges.UsualCharge;
+                return Charges.UsualChargeThread;
             }
             throw new ArgumentOutOfRangeException();
         }

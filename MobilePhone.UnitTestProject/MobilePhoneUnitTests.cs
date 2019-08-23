@@ -76,8 +76,8 @@ namespace MobilePhone.UnitTestProject
         {
             //arrange
             vFakeOutput.Clean();
-            vNokia1100.ChargerComponent = ChargeFactory.GetCharge(Charges.FastCharge, vFakeOutput);
-            string controlValue = "\nFastCharge charging fast";
+            vNokia1100.ChargerComponent = ChargeFactory.GetCharge(Charges.FastChargeThread, vNokia1100.Battery, vFakeOutput);
+            string controlValue = "\nFastChargeThread charging fast";
             //act
             vNokia1100.Charge();
             //assert
@@ -88,8 +88,8 @@ namespace MobilePhone.UnitTestProject
         {
             //arrange
             vFakeOutput.Clean();
-            vNokia1100.ChargerComponent = ChargeFactory.GetCharge(Charges.UsualCharge, vFakeOutput);
-            string controlValue = "\nUsualCharge charging slowly";
+            vNokia1100.ChargerComponent = ChargeFactory.GetCharge(Charges.UsualChargeThread, vNokia1100.Battery, vFakeOutput);
+            string controlValue = "\nUsualChargeThread charging slowly";
             //act
             vNokia1100.Charge();
             //assert

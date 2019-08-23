@@ -8,8 +8,9 @@ namespace MobilePhone.Base.Components.Batteries
 {
     public class BatteryLiIon: BatteryBase
     {
-        private readonly string vBatteryType = "LiIon";
-        public override string BatteryType { get { return vBatteryType; } }
+        private string vBatteryType = "LiIon";
+
+        public override string BatteryType{get{ return vBatteryType; }}
 
 
         public BatteryLiIon(int batteryCapacity, int batteryVoltage): base(batteryCapacity, batteryVoltage)

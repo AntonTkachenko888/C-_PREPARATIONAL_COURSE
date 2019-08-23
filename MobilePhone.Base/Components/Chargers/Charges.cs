@@ -8,7 +8,9 @@ namespace MobilePhone.Base.Components.Chargers
 {
     public enum Charges
     {
-        FastCharge = 1,
-        UsualCharge 
+        FastChargeThread = 1,
+        UsualChargeThread,
+        FastChargeTask,
+        UsualChargeTask
     }
 }

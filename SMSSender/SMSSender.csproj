@@ -42,6 +42,11 @@
   <ItemGroup>
     <Compile Include="SMSSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMSSenderBase.cs" />
+    <Compile Include="SMSSenderFactory.cs" />
+    <Compile Include="SmsSenders.cs" />
+    <Compile Include="SMSSenderTask.cs" />
+    <Compile Include="SMSSenderThread.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MobilePhone.Base\MobilePhone.Base.csproj">

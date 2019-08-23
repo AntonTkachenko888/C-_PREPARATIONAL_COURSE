@@ -33,7 +33,7 @@ namespace MobilePhone.ConsoleApp
                 Console.WriteLine("1 - FastCharge");
                 Console.WriteLine("2 - UsualCharge");
                 int chargerNumber = readNumber();
-                myNokia1100.ChargerComponent = ChargeFactory.GetCharge((Charges)chargerNumber, console);
+                myNokia1100.ChargerComponent = ChargeFactory.GetCharge((Charges)chargerNumber, myNokia1100.Battery, console);
                 myNokia1100.Charge();
 
                 Console.ReadKey();

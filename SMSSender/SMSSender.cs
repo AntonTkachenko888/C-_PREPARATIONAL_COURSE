@@ -56,18 +56,28 @@ namespace SMSSender
         public SmsSender(MobilePhoneBase recipient):this()
         {
             vRecipient = recipient;
+            MessagingInitialisation();
         }       
         private void SendSMS(IMessage message)
         {
             vRecipient.SMSProvider.RaiseSMSReceivedEvent(message);
         }
-        public void TimerTick(int IntervalSec)
+        #region Messaging
+        private Timer timer = new Timer();
+        public virtual void StartMessaging(int IntervalSec)
         {
-            Timer timer = new Timer();
-            timer.Elapsed += OnTimerIvent;
-            timer.Interval = IntervalSec*1000;
-            timer.Enabled = true;
+            timer.Interval = IntervalSec * 1000;
+            timer.Start();
         }
+        public virtual void StopMessaging()
+        {
+            timer.Stop();
+        }
+        public virtual void MessagingInitialisation()
+        {
+            timer.Elapsed += OnTimerIvent;
+        }
+        #endregion
 
         private void OnTimerIvent(object source, ElapsedEventArgs e)
         {

@@ -28,7 +28,7 @@ namespace MobilePhone.Base.MobilePhones
         public abstract MicrophoneBase Microphone { get; }
 
         public IPlayback PlaybackComponent { get; set; }
-        public ICharger ChargerComponent { get; set; }
+        public ChargeBase ChargerComponent { get; set; }
 
         public void Play(object data)
         {
@@ -36,7 +36,7 @@ namespace MobilePhone.Base.MobilePhones
         }
         public void Charge()
         {
-            ChargerComponent.Charge();
+            ChargerComponent.GetChargeMethod();
         }
         public abstract void SimCardAdd(int number);
         public override string ToString()

@@ -8,7 +8,8 @@ namespace MobilePhone.Base.Components.Batteries
 {
     public class BatteryLiPoly: BatteryBase
     {
-        private readonly string vBatteryType = "LiPoly";
+        private string vBatteryType = "LiPoly";
+
         public override string BatteryType{get { return vBatteryType; }}
         
         public BatteryLiPoly(int batteryCapacity,int batteryVoltage): base(batteryCapacity, batteryVoltage)

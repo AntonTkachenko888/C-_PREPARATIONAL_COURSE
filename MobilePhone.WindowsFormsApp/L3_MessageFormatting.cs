@@ -27,7 +27,7 @@ namespace MobilePhone.WindowsFormsApp
         }
         private void L3_MessageFormatting_Load(object sender, EventArgs e)
         {
-            SmsSender.TimerTick(1);
+            SmsSender.StartMessaging(1);
             formOutput = new FormOutput(richTextBox_MessageOutBox);
         }
 

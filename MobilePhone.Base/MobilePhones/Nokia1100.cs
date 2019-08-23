@@ -32,7 +32,7 @@ namespace MobilePhone.Base.MobilePhones
         private readonly MonochromeScreen vScreen = new MonochromeScreen(100,100,100);
         public override ScreenBase Screen { get { return vScreen; } }
 
-        private readonly BatteryLiPoly vBattery = new BatteryLiPoly(3000,5);
+        private readonly BatteryLiPoly vBattery = new BatteryLiPoly(100,5);
         public override BatteryBase Battery { get { return vBattery; } }
 
         private readonly DynamicUsual vDynamic = new DynamicUsual();
