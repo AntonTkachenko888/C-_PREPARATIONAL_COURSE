@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Callers
+namespace MobilePhone.Base.Components.Calls
 {
-    public class Callers
+    public enum CallDirection
     {
-
+        incoming,
+        outgoing
     }
 }

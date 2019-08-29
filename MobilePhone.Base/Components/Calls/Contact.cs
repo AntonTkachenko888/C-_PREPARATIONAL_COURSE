@@ -11,11 +11,15 @@ namespace MobilePhone.Base.Components.Calls
         public string Name { get; set; }
         public string LastName  { get; set; }
 
-        public List<int> Nambers { get; set; }
+        private List<int> Nambers { get; set; }
 
-        public void AddNumberToContact(Contact contact, int number)
+        public void AddNumberToContact(int number)
         {
-
+            Nambers.Add(number);
+        }
+        public IEnumerable<int> GetAllNumbers(int number)
+        {
+            return Nambers;
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using MobilePhone.Base.Components.Chargers;
 using MobilePhone.Base.Components.HeadSets;
 using MobilePhone.Base.Components.SMS;
+using MobilePhone.Base.Components.Calls;
 
 namespace MobilePhone.Base.MobilePhones
 {
@@ -19,6 +20,8 @@ namespace MobilePhone.Base.MobilePhones
     {
         public abstract Storage Storage { get; }
         public abstract SMSProvider SMSProvider { get; }
+        public abstract CallProvider CallProvider { get; }
+        public abstract CallsHistory CallsHistory { get; }
         public abstract string Model { get; }
         public abstract int SerialNumber { get; }
         public abstract SimCardBase SimCard { get; }

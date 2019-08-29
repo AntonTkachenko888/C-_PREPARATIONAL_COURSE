@@ -8,7 +8,16 @@ namespace MobilePhone.Base.Components.Calls
 {
     public class CallsHistory
     {
-        protected List<Call> Calls { get; set; }
+        public event Action CallAdded;
+        public event Action CallRemoved;
+        private List<Call> Calls { get; set; } = new List<Call>();
+
+        private CallProvider vCallProvider;
+        public CallsHistory(CallProvider callProvider)
+        {
+            vCallProvider = callProvider;
+        }
+        
 
         public void Add(Call call)
         {
@@ -21,11 +30,11 @@ namespace MobilePhone.Base.Components.Calls
 
         public IEnumerable<Call> GetAllCalls()
         {
-              
+            return null;
         }
-        public IEnumerable<Call> GetUserCalls()
+        public IEnumerable<Call> GetContactCalls(Contact contact)
         {
-
+            return null;
         }
     }
 }

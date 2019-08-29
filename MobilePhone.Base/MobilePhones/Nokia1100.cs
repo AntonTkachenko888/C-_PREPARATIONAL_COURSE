@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MobilePhone.Base.Components.Calls;
 using MobilePhone.Base.Components.SMS;
 
 namespace MobilePhone.Base.MobilePhones
@@ -25,6 +26,12 @@ namespace MobilePhone.Base.MobilePhones
 
         private readonly Storage vStorage;
         public override Storage Storage { get { return vStorage; } }
+
+        private readonly CallProvider vCallProvider = new CallProvider();
+        public override CallProvider CallProvider { get { return vCallProvider; } }
+
+        private readonly CallsHistory vCallsHistory;
+        public override CallsHistory CallsHistory { get { return vCallsHistory; } }
 
         private readonly SimCardMicro vSimCard = new SimCardMicro();
         public override SimCardBase SimCard { get { return vSimCard; } }
@@ -47,6 +54,7 @@ namespace MobilePhone.Base.MobilePhones
         private Nokia1100()
         {
             vStorage = new Storage(SMSProvider);
+            vCallsHistory = new CallsHistory(CallProvider);
         }
         public Nokia1100(int serialNamber):this()
         {

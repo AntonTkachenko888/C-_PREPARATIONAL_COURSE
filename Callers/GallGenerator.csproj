@@ -7,8 +7,8 @@
     <ProjectGuid>{619C1191-739D-49E2-BF67-4798A0186BA3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Callers</RootNamespace>
-    <AssemblyName>Callers</AssemblyName>
+    <RootNamespace>CallGenerator</RootNamespace>
+    <AssemblyName>CallGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,8 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Callers.cs" />
+    <Compile Include="CallGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MobilePhone.Base\MobilePhone.Base.csproj">
+      <Project>{4c7947a3-ad69-4a97-82bc-d1bb8df8068d}</Project>
+      <Name>MobilePhone.Base</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

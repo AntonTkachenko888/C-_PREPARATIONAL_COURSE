@@ -9,5 +9,8 @@ namespace MobilePhone.Base.Components.Calls
     public interface ICall
     {
         int PhoneNamber { get; set; }
+        CallDirection CallDirection { get; set; }
+        DateTime StartTime { get; set; }
+        TimeSpan CallTime { get; set; }
     }
 }

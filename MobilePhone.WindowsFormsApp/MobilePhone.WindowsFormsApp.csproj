@@ -85,6 +85,12 @@
     <Compile Include="L3_MessageFormatting.Designer.cs">
       <DependentUpon>L3_MessageFormatting.cs</DependentUpon>
     </Compile>
+    <Compile Include="L6_Calls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L6_Calls.Designer.cs">
+      <DependentUpon>L6_Calls.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="L5_MessageFiltering.resx">
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="L3_MessageFormatting.resx">
       <DependentUpon>L3_MessageFormatting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L6_Calls.resx">
+      <DependentUpon>L6_Calls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -12,7 +12,7 @@ namespace MobilePhone.Base.Components.Calls
 
         public event CallDelegate Call;
 
-        public void RaiseSMSReceivedEvent(ICall call)
+        public void CallEvent(ICall call)
         {
             Call?.Invoke(call);
         }

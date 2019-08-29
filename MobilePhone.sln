@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.MessageFilterin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.ThreadingTasksUnitTestProject", "MobilePhone.ThreadingTasksUnitTestProject\MobilePhone.ThreadingTasksUnitTestProject.csproj", "{DF5C2FDC-6E81-4742-90AE-3FACC8E73922}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Callers", "Callers\Callers.csproj", "{619C1191-739D-49E2-BF67-4798A0186BA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GallGenerator", "Callers\GallGenerator.csproj", "{619C1191-739D-49E2-BF67-4798A0186BA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
