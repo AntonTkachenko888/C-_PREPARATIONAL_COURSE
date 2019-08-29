@@ -41,15 +41,18 @@
             this.button_AddNumberToContact = new System.Windows.Forms.Button();
             this.label_CurrentCallNumber = new System.Windows.Forms.Label();
             this.textBox_CurrentCallNumber = new System.Windows.Forms.TextBox();
+            this.button_DeleteCurrentCall = new System.Windows.Forms.Button();
+            this.button_ClearHistory = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView_Calls
             // 
-            this.listView_Calls.Location = new System.Drawing.Point(12, 325);
+            this.listView_Calls.Location = new System.Drawing.Point(12, 271);
             this.listView_Calls.Name = "listView_Calls";
             this.listView_Calls.Size = new System.Drawing.Size(560, 425);
             this.listView_Calls.TabIndex = 0;
             this.listView_Calls.UseCompatibleStateImageBehavior = false;
+            this.listView_Calls.DoubleClick += new System.EventHandler(this.listView_Calls_DoubleClick);
             // 
             // textBox_ContactName
             // 
@@ -103,12 +106,13 @@
             // 
             // button_Back
             // 
-            this.button_Back.Location = new System.Drawing.Point(12, 281);
+            this.button_Back.Location = new System.Drawing.Point(12, 229);
             this.button_Back.Name = "button_Back";
             this.button_Back.Size = new System.Drawing.Size(75, 34);
             this.button_Back.TabIndex = 7;
             this.button_Back.Text = "Back";
             this.button_Back.UseVisualStyleBackColor = true;
+            this.button_Back.Click += new System.EventHandler(this.button_Back_Click);
             // 
             // button_Add_Contact
             // 
@@ -154,11 +158,31 @@
             this.textBox_CurrentCallNumber.Size = new System.Drawing.Size(195, 29);
             this.textBox_CurrentCallNumber.TabIndex = 11;
             // 
+            // button_DeleteCurrentCall
+            // 
+            this.button_DeleteCurrentCall.Location = new System.Drawing.Point(12, 713);
+            this.button_DeleteCurrentCall.Name = "button_DeleteCurrentCall";
+            this.button_DeleteCurrentCall.Size = new System.Drawing.Size(278, 34);
+            this.button_DeleteCurrentCall.TabIndex = 13;
+            this.button_DeleteCurrentCall.Text = "Delete current call";
+            this.button_DeleteCurrentCall.UseVisualStyleBackColor = true;
+            // 
+            // button_ClearHistory
+            // 
+            this.button_ClearHistory.Location = new System.Drawing.Point(294, 713);
+            this.button_ClearHistory.Name = "button_ClearHistory";
+            this.button_ClearHistory.Size = new System.Drawing.Size(278, 34);
+            this.button_ClearHistory.TabIndex = 15;
+            this.button_ClearHistory.Text = "Clear history";
+            this.button_ClearHistory.UseVisualStyleBackColor = true;
+            // 
             // L6_Calls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 761);
+            this.Controls.Add(this.button_ClearHistory);
+            this.Controls.Add(this.button_DeleteCurrentCall);
             this.Controls.Add(this.label_CurrentCallNumber);
             this.Controls.Add(this.textBox_CurrentCallNumber);
             this.Controls.Add(this.button_AddNumberToContact);
@@ -199,5 +223,7 @@
         private System.Windows.Forms.Button button_AddNumberToContact;
         private System.Windows.Forms.Label label_CurrentCallNumber;
         private System.Windows.Forms.TextBox textBox_CurrentCallNumber;
+        private System.Windows.Forms.Button button_DeleteCurrentCall;
+        private System.Windows.Forms.Button button_ClearHistory;
     }
 }

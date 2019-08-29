@@ -18,7 +18,52 @@ namespace CallGenerator
         private CallGenerator()
         {
             Calls = new List<ICall>();
-            //Add calls
+
+            Calls.Add(new PhoneCall(1, CallDirection.outgoing,
+                new DateTime(2008, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 1)));
+            Calls.Add(new PhoneCall(2, CallDirection.outgoing,
+                new DateTime(2009, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 2)));
+            Calls.Add(new PhoneCall(3, CallDirection.outgoing,
+                new DateTime(2010, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 3)));
+            Calls.Add(new PhoneCall(4, CallDirection.outgoing,
+                new DateTime(2011, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 4)));
+            Calls.Add(new PhoneCall(5, CallDirection.outgoing,
+                new DateTime(2012, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 5)));
+            Calls.Add(new PhoneCall(1, CallDirection.outgoing,
+                new DateTime(2013, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 6)));
+            Calls.Add(new PhoneCall(2, CallDirection.outgoing,
+                new DateTime(2014, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 7)));
+            Calls.Add(new PhoneCall(3, CallDirection.outgoing,
+                new DateTime(2015, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 8)));
+            Calls.Add(new PhoneCall(4, CallDirection.outgoing,
+                new DateTime(2016, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 9)));
+            Calls.Add(new PhoneCall(5, CallDirection.outgoing,
+                new DateTime(2017, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 10)));
+            Calls.Add(new PhoneCall(6, CallDirection.outgoing,
+                new DateTime(2018, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 11)));
+
+            Calls.Add(new PhoneCall(1, CallDirection.outgoing,
+                new DateTime(2019, 3, 14, 10, 14, 23), new TimeSpan(0, 1, 1)));
+            Calls.Add(new PhoneCall(2, CallDirection.outgoing,
+                new DateTime(2020, 3, 14, 10, 14, 23), new TimeSpan(0, 2, 2)));
+            Calls.Add(new PhoneCall(3, CallDirection.outgoing,
+                new DateTime(2021, 3, 14, 10, 14, 23), new TimeSpan(0, 3, 3)));
+            Calls.Add(new PhoneCall(4, CallDirection.outgoing,
+                new DateTime(2022, 3, 14, 10, 14, 23), new TimeSpan(0, 4, 4)));
+            Calls.Add(new PhoneCall(5, CallDirection.outgoing,
+                new DateTime(2023, 3, 14, 10, 14, 23), new TimeSpan(0, 5, 5)));
+            Calls.Add(new PhoneCall(1, CallDirection.outgoing,
+                new DateTime(2024, 3, 14, 10, 14, 23), new TimeSpan(0, 6, 6)));
+            Calls.Add(new PhoneCall(2, CallDirection.outgoing,
+                new DateTime(2025, 3, 14, 10, 14, 23), new TimeSpan(0, 7, 7)));
+            Calls.Add(new PhoneCall(3, CallDirection.outgoing,
+                new DateTime(2026, 3, 14, 10, 14, 23), new TimeSpan(0, 8, 8)));
+            Calls.Add(new PhoneCall(4, CallDirection.outgoing,
+                new DateTime(2027, 3, 14, 10, 14, 23), new TimeSpan(0, 9, 9)));
+            Calls.Add(new PhoneCall(5, CallDirection.outgoing,
+                new DateTime(2028, 3, 14, 10, 14, 23), new TimeSpan(0, 10, 10)));
+            Calls.Add(new PhoneCall(6, CallDirection.outgoing,
+                new DateTime(2029, 3, 14, 10, 14, 23), new TimeSpan(0, 11, 11)));
         }
         public CallGenerator(MobilePhoneBase recipient):this()
         {

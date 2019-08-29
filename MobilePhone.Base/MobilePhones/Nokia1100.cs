@@ -33,6 +33,9 @@ namespace MobilePhone.Base.MobilePhones
         private readonly CallsHistory vCallsHistory;
         public override CallsHistory CallsHistory { get { return vCallsHistory; } }
 
+        private readonly Contacts vContacts = new Contacts();
+        public override Contacts Contacts { get { return vContacts; } }
+
         private readonly SimCardMicro vSimCard = new SimCardMicro();
         public override SimCardBase SimCard { get { return vSimCard; } }
 
@@ -54,7 +57,7 @@ namespace MobilePhone.Base.MobilePhones
         private Nokia1100()
         {
             vStorage = new Storage(SMSProvider);
-            vCallsHistory = new CallsHistory(CallProvider);
+            vCallsHistory = new CallsHistory(CallProvider, Contacts);
         }
         public Nokia1100(int serialNamber):this()
         {
@@ -75,6 +78,5 @@ namespace MobilePhone.Base.MobilePhones
         {
             return base.ToString();
         }
-
     }
 }

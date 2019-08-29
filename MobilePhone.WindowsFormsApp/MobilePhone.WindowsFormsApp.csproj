@@ -128,6 +128,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Callers\GallGenerator.csproj">
+      <Project>{619c1191-739d-49e2-bf67-4798a0186ba3}</Project>
+      <Name>GallGenerator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MobilePhone.Base\MobilePhone.Base.csproj">
       <Project>{4c7947a3-ad69-4a97-82bc-d1bb8df8068d}</Project>
       <Name>MobilePhone.Base</Name>

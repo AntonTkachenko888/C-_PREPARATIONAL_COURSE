@@ -22,6 +22,7 @@ namespace MobilePhone.Base.MobilePhones
         public abstract SMSProvider SMSProvider { get; }
         public abstract CallProvider CallProvider { get; }
         public abstract CallsHistory CallsHistory { get; }
+        public abstract Contacts Contacts { get ; }
         public abstract string Model { get; }
         public abstract int SerialNumber { get; }
         public abstract SimCardBase SimCard { get; }

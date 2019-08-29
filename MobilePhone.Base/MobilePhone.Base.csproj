@@ -43,12 +43,14 @@
     <Compile Include="Components\Batteries\BatteryLiIon.cs" />
     <Compile Include="Components\Batteries\BatteryLiPoly.cs" />
     <Compile Include="Components\Batteries\BatteryBase.cs" />
-    <Compile Include="Components\Calls\Call.cs" />
+    <Compile Include="Components\Calls\PhoneCall.cs" />
     <Compile Include="Components\Calls\CallDirection.cs" />
+    <Compile Include="Components\Calls\CallNumberStartTimeEqualityComparer.cs" />
     <Compile Include="Components\Calls\CallProvider.cs" />
     <Compile Include="Components\Calls\CallsHistory.cs" />
-    <Compile Include="Components\Calls\CallStartDateComparer.cs" />
+    <Compile Include="Components\Calls\CallStartTimeComparer.cs" />
     <Compile Include="Components\Calls\Contact.cs" />
+    <Compile Include="Components\Calls\ContactNameLastNameEqualityComparer.cs" />
     <Compile Include="Components\Calls\Contacts.cs" />
     <Compile Include="Components\Calls\ICall.cs" />
     <Compile Include="Components\Chargers\ChargeFactory.cs" />
