@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MobilePhone.Base.Components.Calls
 {
-    public class PhoneCall: ICall
+    public class PhoneCall: IPhoneCall
     {
         public int PhoneNamber { get; set; }
         public CallDirection CallDirection { get; set; }

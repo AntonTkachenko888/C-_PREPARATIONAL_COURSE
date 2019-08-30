@@ -43,6 +43,7 @@
     <Compile Include="Components\Batteries\BatteryLiIon.cs" />
     <Compile Include="Components\Batteries\BatteryLiPoly.cs" />
     <Compile Include="Components\Batteries\BatteryBase.cs" />
+    <Compile Include="Components\Calls\IPhoneCall.cs" />
     <Compile Include="Components\Calls\PhoneCall.cs" />
     <Compile Include="Components\Calls\CallDirection.cs" />
     <Compile Include="Components\Calls\CallNumberStartTimeEqualityComparer.cs" />

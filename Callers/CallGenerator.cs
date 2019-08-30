@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using MobilePhone.Base.Components.Calls;
@@ -12,7 +13,6 @@ namespace CallGenerator
     public class CallGenerator
     {
         private MobilePhoneBase vRecipient;
-        private MobilePhoneBase Recipient { get; set; }
         private List<ICall> Calls { get; set; }
         private int CurrentCall { get; set; } = 0;
         private CallGenerator()
@@ -68,30 +68,46 @@ namespace CallGenerator
         public CallGenerator(MobilePhoneBase recipient):this()
         {
             vRecipient = recipient;
-            MessagingInitialisation();
         }
         private void Call(ICall call)
         {
             vRecipient.CallProvider.CallEvent(call);
         }
         #region Messaging
-        private Timer timer = new Timer();
-        public virtual void StartMessaging(int IntervalSec)
+        private Task task;
+        private CancellationTokenSource cancelTokSrc;
+        private bool IsTaskActive;
+        public void Start(int IntervalSec)
         {
-            timer.Interval = IntervalSec * 1000;
-            timer.Start();
+            if (!IsTaskActive)
+            {
+                cancelTokSrc = new CancellationTokenSource();
+                task = Task.Run(() => Tick(IntervalSec, cancelTokSrc.Token));
+                IsTaskActive = true;
+            }
         }
-        public virtual void StopMessaging()
+
+        private void Tick(int IntervalSec, CancellationToken token)
         {
-            timer.Stop();
+            while (true)
+            {
+                if (token.IsCancellationRequested)
+                    return;
+                OnTimerIvent();
+                Thread.Sleep(IntervalSec * 1000);
+            }
         }
-        public virtual void MessagingInitialisation()
+        public void Stop()
         {
-            timer.Elapsed += OnTimerIvent;
+            if (IsTaskActive)
+            {
+                cancelTokSrc.Cancel();
+                IsTaskActive = false;
+            }
         }
         #endregion
 
-        private void OnTimerIvent(object source, ElapsedEventArgs e)
+        private void OnTimerIvent()
         {
             ICall call = GetNext();
             if (call != null)

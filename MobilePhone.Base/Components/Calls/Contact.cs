@@ -8,33 +8,47 @@ namespace MobilePhone.Base.Components.Calls
 {
     public class Contact
     {
+        public event Action ContactChanged;
         public string Name { get; set; }
         public string LastName  { get; set; }
 
         private List<int> Numbers { get; set; } = new List<int>();
 
-        public Contact(string name, string lastName,int numbers)
+        public Contact() { }
+        public Contact(string name, string lastName)
+            :this()
         {
+            if (string.IsNullOrEmpty(name))
+                throw new ArgumentOutOfRangeException("You missed contact name!");
+            if (string.IsNullOrEmpty(lastName))
+                throw new ArgumentOutOfRangeException("You missed contact last name!");
             Name = name;
             LastName = lastName;
+        }
+        public Contact(string name, string lastName,int numbers)
+            : this(name, lastName)
+        {
             Numbers.Add(numbers);
         }
-
-        public Contact()
-        {
-        }
-
+        
         public void AddNumberToContact(int number)
         {
             Numbers.Add(number);
+
+            ContactChanged?.Invoke();
         }
         public bool HaveThisNumber(int number)
         {
             return Numbers.Contains(number);
         }
-        public IEnumerable<int> GetAllNumbers(int number)
+        public string GetAllNumbers()
         {
-            return Numbers;
+            StringBuilder s = new StringBuilder();
+            foreach (var item in Numbers)
+            {
+                s.Append(item + Environment.NewLine);
+            }
+            return s.ToString();
         }
     }
 }

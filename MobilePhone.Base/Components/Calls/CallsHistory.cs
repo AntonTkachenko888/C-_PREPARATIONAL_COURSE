@@ -17,8 +17,9 @@ namespace MobilePhone.Base.Components.Calls
         {
             vCallProvider = callProvider;
             vCallProvider.Call += this.Add;
-
             vContacts = contacts;
+            vContacts.ContactListChanged += OnContactChanged;
+            
 
             Calls.Add(new PhoneCall(1, CallDirection.incoming,
                 new DateTime(1997, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 1), vContacts));
@@ -43,6 +44,24 @@ namespace MobilePhone.Base.Components.Calls
             Calls.Add(new PhoneCall(6, CallDirection.incoming,
                 new DateTime(2007, 3, 14, 10, 14, 23), new TimeSpan(0, 0, 11), vContacts));
         }
+
+        private void OnContactChanged()
+        {
+            foreach (var item in Calls)
+            {
+                if (item?.Contact?.Name == null)
+                {
+                    item.Contact = vContacts.Get(item.PhoneNamber);
+                }
+                if (item?.Contact?.Name != null)
+                {
+                    var c = vContacts.Get(item.Contact.Name, item.Contact.LastName);
+                    if (c == null)
+                        item.Contact = null;
+                }
+            }
+        }
+
         public void Add(ICall call)
         {
             Calls.Add(new PhoneCall(call, vContacts));
@@ -53,7 +72,7 @@ namespace MobilePhone.Base.Components.Calls
             var c = Calls.Find(x => x.PhoneNamber == call.PhoneNamber & x.StartTime == call.StartTime);
             Calls.Remove(c);
 
-            if (!Calls.Contains(call, CallNumberStartTimeEqualityComparer.Instance))
+            if (Calls.Contains(call, CallNumberStartTimeEqualityComparer.Instance))
                 throw new Exception("Can't delete this call please try again");
 
             CallListChanged?.Invoke();
@@ -74,8 +93,8 @@ namespace MobilePhone.Base.Components.Calls
         }
         private IEnumerable<PhoneCall> GetCalls(Contact contact)
         {
-            var contactCalls = Calls.Where(c => c.Contact.Name == contact.Name &&
-                                                c.Contact.LastName == contact.LastName).ToList();
+            var contactCalls = Calls.Where(c => c?.Contact?.Name == contact.Name &&
+                                                c?.Contact?.LastName == contact.LastName).ToList();
             contactCalls.Sort(CallStartTimeComparer.Instance);
             return contactCalls;
         }
