@@ -73,6 +73,7 @@ namespace CallGenerator
         {
             vRecipient.CallProvider.CallEvent(call);
         }
+
         #region Messaging
         private Task task;
         private CancellationTokenSource cancelTokSrc;
@@ -86,7 +87,6 @@ namespace CallGenerator
                 IsTaskActive = true;
             }
         }
-
         private void Tick(int IntervalSec, CancellationToken token)
         {
             while (true)

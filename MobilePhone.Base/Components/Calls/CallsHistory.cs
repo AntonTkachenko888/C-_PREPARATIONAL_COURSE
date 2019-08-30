@@ -104,7 +104,6 @@ namespace MobilePhone.Base.Components.Calls
             contactCalls.Sort(CallStartTimeComparer.Instance);
             return contactCalls;
         }
-
         public IEnumerable<PhoneCall> GetRelatedCalls(PhoneCall phoneCall  )
         {
             if (!string.IsNullOrEmpty(phoneCall?.Contact?.Name) && !string.IsNullOrEmpty(phoneCall?.Contact?.LastName))
